@@ -31,7 +31,7 @@
             <ul class="nav">
               <li class="active">
                 <a href="#">
-                  <i class="icon-home"></i>主页</a>
+                  <i class="icon-home" onclick="function(){alert("点击了主页按钮")}"></i>主页</a>
               </li>
               <li>
                 <a href="#about">关于</a>
@@ -101,7 +101,7 @@
       var curr_user_nickname = '';
       var curr_user_sex = '';
       var socket;
-      var wsServer = 'ws://127.0.0.1:2012/chatServ'
+      var wsServer = 'ws://www.sunsulei.com/chatServ'
 
       $('#myModal').modal('show'); 
 
@@ -176,10 +176,10 @@
                 var icon_type = "";
                 if(msgObj.user_list[user_name] == "b")
                 {
-                    icon_type = "/img/boy.png";
+                    icon_type = "img/boy.png";
                 }else
                 {
-                    icon_type = "/img/girl.png";
+                    icon_type = "img/girl.png";
                 }
 		        if(user_name == curr_user_nickname)
                 {
@@ -209,10 +209,10 @@
                 var icon_type = "";
                 if(msgObj.user_list[user_name] == "b")
                 {
-                    icon_type = "/img/boy.png";
+                    icon_type = "img/boy.png";
                 }else
                 {
-                    icon_type = "/img/girl.png";
+                    icon_type = "img/girl.png";
                 }
                 if(user_name == curr_user_nickname)
                 {
@@ -292,6 +292,7 @@
       document.getElementById('sendMessage').addEventListener('click',function()
       {
         message = document.getElementById('messageTextBox').value;
+        document.getElementById('messageTextBox').value = "";
         if (curr_user_nickname)
         {
           var msg = new Object;
